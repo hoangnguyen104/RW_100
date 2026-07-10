@@ -1,6 +1,7 @@
 package com.vti.controller;
 
 
+import com.vti.dto.DepartmentDTO;
 import com.vti.entity.Department;
 import com.vti.service.IDepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +20,14 @@ public class DepartmentController {
     private IDepartmentService departmentService;// = new ();
 
     @GetMapping
-    public ResponseEntity<List<Department>> findAll() {
-        List<Department> departments = departmentService.findAll();
-        return new ResponseEntity<>(departments, HttpStatus.OK);
+    public ResponseEntity<List<DepartmentDTO>> findAll() {
+        return new ResponseEntity<>(departmentService.findAll(), HttpStatus.OK);
     }
 
     //lay ra thong tin department theo id  - khóa chính
     @GetMapping("/{idSearch}")// http://localhost:8080/api/v1/departments/13
-    public ResponseEntity<Department> findById(@PathVariable(name = "idSearch") Integer id) {
-        Department department = departmentService.findById(id);
-        return new ResponseEntity<>(department, HttpStatus.OK);
+    public ResponseEntity<DepartmentDTO> findById(@PathVariable(name = "idSearch") Integer id) {
+        return new ResponseEntity<>(departmentService.findById(id), HttpStatus.OK);
     }
 
     // xóa theo id

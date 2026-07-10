@@ -32,22 +32,13 @@ public class Account {
     // cấu hình khóa ngoại
     @ManyToOne
     @JoinColumn(name = "department_id")
-    private Department dep;
+    private Department department;
 
     @Column(name = "create_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdDate;
 
+    @ManyToOne
+    @JoinColumn(name = "position_id")
+    private Position position;
 
-
-    @Override
-    public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", email='" + email + '\'' +
-                ", dep=" + dep +
-                ", createdDate=" + createdDate +
-                '}';
-    }
 }

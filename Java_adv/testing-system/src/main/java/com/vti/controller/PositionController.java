@@ -1,6 +1,7 @@
 package com.vti.controller;
 
 
+import com.vti.dto.PositionDTO;
 import com.vti.entity.Department;
 import com.vti.entity.Position;
 import com.vti.service.IDepartmentService;
@@ -19,9 +20,8 @@ public class PositionController {
     private IPositionService positionService;
 
     @GetMapping
-    public ResponseEntity<List<Position>> findAll() {
-        List<Position> positions = positionService.findAll();
-        return new ResponseEntity<>(positions, HttpStatus.OK);
+    public ResponseEntity<List<PositionDTO>> findAll() {
+        return new ResponseEntity<>(positionService.findAll(), HttpStatus.OK);
     }
 
     @PostMapping
