@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Department Management</title>
+
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+    />
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="form-group">
+        <legend>Quản lý Department</legend>
+      </div>
+
+      <a
+        class="btn btn-primary"
+        data-toggle="modal"
+        href="#modal-id"
+        onclick="resetForm()"
+      >
+        Create
+      </a>
+
+      <br /><br />
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Department Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="tableBoby"></tbody>
+      </table>
+
+      <!-- Modal -->
+
+      <div class="modal fade" id="modal-id">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+
+              <h4 class="modal-title">Department</h4>
+            </div>
+
+            <div class="modal-body">
+              <form id="departmentForm" class="form-horizontal">
+                <div class="form-group">
+                  <label
+                    for="inputDepartmentName"
+                    class="col-sm-4 control-label"
+                  >
+                    Department Name
+                  </label>
+
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      id="inputDepartmentName"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="submit">
+                Save
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./department.js"></script>
+  </body>
+</html>

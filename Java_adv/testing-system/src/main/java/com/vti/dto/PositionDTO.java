@@ -10,5 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PositionDTO {
+    private Integer id;
     private String positionName;
+
 }
